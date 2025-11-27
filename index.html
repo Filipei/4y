@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F & R - Nosso Amor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon: #00d1d2;
+            --dark: #000;
+        }
+
+        body {
+            font-family: "EB Garamond", serif;
+            background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark)),
+                radial-gradient(ellipse at bottom, var(--dark), rgba(145, 233, 255, 0.2)),
+                repeating-linear-gradient(220deg, black 0px, black 19px, transparent 19px, transparent 22px),
+                repeating-linear-gradient(189deg, black 0px, black 19px, transparent 19px, transparent 22px),
+                repeating-linear-gradient(148deg, black 0px, black 19px, transparent 19px, transparent 22px),
+                linear-gradient(90deg, #00fffa, #f0f0f0);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 10px;
+            gap: 30px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .Texto {
+            width: 50%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        h3 {
+            color: var(--neon);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        #desc {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+       
+        .gallery-section {
+            width: 80%;
+            margin-top: 40px;
+        }
+
+        .gallery-title {
+            color: var(--neon);
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .photo-item {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 209, 210, 0.4);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .photo-image img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .photo-caption h4 {
+            color: var(--neon);
+            margin-bottom: 6px;
+        }
+
+      
+        #contador {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .time-block {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--neon);
+            width: 90px;
+            height: 90px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .number {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .label {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+       
+        #musicBtn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--neon);
+            color: black;
+            font-size: 22px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 0 20px var(--neon);
+            z-index: 9999;
+            transition: 0.3s;
+            border: none;
+        }
+
+        #musicBtn:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .Texto {
+                width: 85%;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            .time-block {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .number {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="./music.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+   
+    <div id="musicBtn"><i class="fa-solid fa-play"></i></div>
+
+ 
+    <h2>Eu te amo mais do que posso descrever.</h2>
+
+  
+    <div class="Texto">
+        <h3>3 anos de Namoro</h3>
+        <p id="desc">Nossa história é única, inspiradora e cheia de momentos que marcaram nossas vidas. Desde o dia em que saímos juntos pela primeira vez, nunca mais fomos os mesmos.</p>
+    </div>
+
+    <div class="Texto">
+        <h3>4 anos de Namoro</h3>
+        <p id="desc">Quatro anos ao seu lado, vivendo, aprendendo e construindo uma vida juntos. Você é meu maior orgulho e minha melhor escolha todos os dias.</p>
+    </div>
+
+   
+    <div class="gallery-section">
+        <h2 class="gallery-title">Nossos Momentos</h2>
+
+        <div class="photo-gallery">
+            <div class="photo-item">
+                <div class="photo-image">
+                    <img src="image/WhatsApp Image 2025-11-26 at 22.33.57.jpeg" alt="Nosso Primeiro Encontro">
+                </div>
+                <div class="photo-caption">
+                    <h4>Nosso Primeiro Encontro</h4>
+                    <p>O dia em que tudo começou.</p>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-image">
+                    <img src="image/viagem.jpeg" alt="Primeira Viagem">
+                </div>
+                <div class="photo-caption">
+                    <h4>Primeira Viagem</h4>
+                    <p>Uma das memórias mais felizes que guardo.</p>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-image">
+                    <img src="image/aniversario.jpeg" alt="Aniversário de Namoro">
+                </div>
+                <div class="photo-caption">
+                    <h4>Aniversário de Namoro</h4>
+                    <p>Um dia inesquecível para nós dois.</p>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-image">
+                    <img src="image/jantar.jpeg" alt="Jantar Especial">
+                </div>
+                <div class="photo-caption">
+                    <h4>Jantar Especial</h4>
+                    <p>Mais um dos nossos momentos únicos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contador">
+        <div class="time-block" id="years"><span class="number">0</span><span class="label">Anos</span></div>
+        <div class="time-block" id="days"><span class="number">0</span><span class="label">Dias</span></div>
+        <div class="time-block" id="hours"><span class="number">0</span><span class="label">Horas</span></div>
+        <div class="time-block" id="minutes"><span class="number">0</span><span class="label">Minutos</span></div>
+        <div class="time-block" id="seconds"><span class="number">0</span><span class="label">Segundos</span></div>
+    </div>
+
+    <footer>
+        Feito com carinho para celebrar o nosso amor 🤍
+    </footer>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
